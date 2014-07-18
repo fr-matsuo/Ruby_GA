@@ -5,6 +5,17 @@ class GenericAlgorithm
         @genoms = genoms
     end
 
+    def cycle
+        evaluate
+        show
+    end
+
+    def show
+        @genoms.each{|genom|
+            genom.show
+        }
+    end
+
     def evaluate
         @genoms.each{|genom|
             genom.evaluate
