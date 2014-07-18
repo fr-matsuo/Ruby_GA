@@ -11,6 +11,7 @@ class GenericAlgorithm
         evaluate
         show
         cross
+        mutantion
     end
 
     def show
