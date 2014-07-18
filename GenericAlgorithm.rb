@@ -39,12 +39,12 @@ class GenericAlgorithm
 
         die_idx = @last_roulette.calc_index + @elite_position
 
-        @genoms[die_idx] = parent1.cross(parent2)
+        @genoms[die_idx] = parent1.cross(die_idx, parent2)
     end
 
     def mutantion
         for i in @elite_position...@genoms.length do
-            if @mutant_rate < rand()
+            if @mutant_rate < Random.rand()
                 @genoms[i].mutantion
             end
         end

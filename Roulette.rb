@@ -13,7 +13,7 @@ class Roulette
         end
     end
 
-    def calc_index(value = rand(@sum))
+    def calc_index(value = Random.rand(@sum))
         if value < 0 || value >= @sum
             return -1
         end

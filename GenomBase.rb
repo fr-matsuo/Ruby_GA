@@ -15,7 +15,7 @@ class GenomBase
         - @evaluation <=> - other.evaluation #降順
     end
 
-    def cross(other)
+    def cross(id, other)
         raise 'Called abstract method : GenomBase'
     end
 
