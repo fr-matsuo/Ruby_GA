@@ -20,5 +20,6 @@ class GenericAlgorithm
         @genoms.each{|genom|
             genom.evaluate
         }
+        @genoms.sort!
     end
 end

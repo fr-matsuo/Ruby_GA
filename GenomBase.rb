@@ -1,11 +1,19 @@
 class GenomBase
     include Comparable
 
+    attr_reader :evaluation
+
     def evaluate
-        @evaluate = rand(100);
+        @evaluation = rand(100);
     end
 
     def show
-        puts @evaluate
+        puts @evaluation
+    end
+
+    def <=>(other)
+        puts 'mine :'+@evaluation.to_s
+        puts 'other:'+other.evaluation.to_s
+        -@evaluation <=> -other.evaluation
     end
 end
