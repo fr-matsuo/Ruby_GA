@@ -12,8 +12,10 @@ class GenomBase
     end
 
     def <=>(other)
-        puts 'mine :'+@evaluation.to_s
-        puts 'other:'+other.evaluation.to_s
-        -@evaluation <=> -other.evaluation
+        - @evaluation <=> - other.evaluation #降順
+    end
+
+    def cross(other)
+        raise 'Called abstract method : GenomBase'
     end
 end
