@@ -4,7 +4,7 @@ require './Roulette.rb'
 class GenericAlgorithm
     def initialize(genoms, cross_rate = 0.2, mutant_rate = 0.03, save_elite = true)
         @genoms      = genoms
-        @cross_rate  = cross_rate
+        @cross_num   = (@genoms.length * cross_rate).ceil
         @mutant_rate = mutant_rate
         @save_elite  = save_elite
 
@@ -16,7 +16,9 @@ class GenericAlgorithm
     def cycle
         evaluate
         show
-        cross
+        for i in 0...@cross_num do
+            cross
+        end
         mutantion
     end
 
@@ -41,6 +43,10 @@ class GenericAlgorithm
     end
 
     def mutantion
-        @genoms[@last_roulette.calc_index + @elite_position].mutantion
+        for i in @elite_position...@genoms.length do
+            if @mutant_rate < rand()
+                @genoms[i].mutantion
+            end
+        end
     end
 end
