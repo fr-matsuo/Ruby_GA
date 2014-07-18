@@ -15,9 +15,10 @@ class GenericAlgorithm
     end
 
     def show
-        @genoms.each{|genom|
-            genom.show
-        }
+        #@genoms.each{|genom|
+        #    genom.show
+        #}
+        @genoms[0].show
     end
 
     def evaluate
