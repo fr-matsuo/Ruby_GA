@@ -1,9 +1,10 @@
 class Roulette
     attr_reader :sum
 
-    def initialize (size, offset = 0, pow = 1)
-        @size = size
+    def initialize (size, reverse=false, offset = 0, pow = 1)
+        @size     = size
         @roulette = Array.new(size, 0)
+        @reverse  = reverse
 
         @sum = 0
         for i in 0...@size do
@@ -22,7 +23,7 @@ class Roulette
             idx = @size - i #逆順に(確率が高い方から)走査
             width -= @roulette[idx]
             if value >= width
-                return idx
+                return !@reverse ? idx : @size - idx - 1
             end
         end
 
