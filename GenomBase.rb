@@ -4,7 +4,7 @@ class GenomBase
     attr_reader :evaluation
 
     def evaluate
-        @evaluation = rand(100);
+        raise 'Called abstract method : GenomBase'
     end
 
     def show
