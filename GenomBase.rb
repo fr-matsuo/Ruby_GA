@@ -18,4 +18,8 @@ class GenomBase
     def cross(other)
         raise 'Called abstract method : GenomBase'
     end
+
+    def mutantion
+        raise 'Called abstract method : GenomBase'
+    end
 end

@@ -34,4 +34,8 @@ class GenericAlgorithm
 
         @genoms[die_idx] = parent1.cross(parent2)
     end
+
+    def mutantion
+        @genoms[@roulette.calc_index].mutantion
+    end
 end
